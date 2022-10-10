@@ -1255,7 +1255,7 @@ func (m multiError) Error() string {
 
 // CloneRepo does an initial clone of the git repo.
 func (git *repoSync) CloneRepo(ctx context.Context) error {
-	args := []string{"clone", "--no-checkout"}
+	args := []string{"clone", "--mirror --no-checkout"}
 	if git.branch != "" {
 		args = append(args, "-b", git.branch)
 	}
